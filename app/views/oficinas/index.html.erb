@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Oficinas</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Edificio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oficinas.each do |oficina| %>
+      <tr>
+        <td><%= oficina.numero %></td>
+        <td><%= oficina.edificio.nombre %></td>
+        <td><%= link_to 'Mostrar', oficina, class: 'btn btn-info btn-sm text-white' %></td>
+        <td><%= link_to 'Editar', edit_oficina_path(oficina), class: 'btn btn-warning btn-sm text-white' %></td>
+        <td><%= link_to 'Eliminar', oficina, method: :delete, data: { confirm: 'Estas Seguro' }, class: 'btn btn-danger btn-sm text-white' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear Nueva Oficina', new_oficina_path, class:'btn btn-primary btn-lg text-white' %>

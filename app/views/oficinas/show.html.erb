@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @oficina.numero %>
+</p>
+
+<p>
+  <strong>Edificio:</strong>
+  <%= @oficina.edificio_id %>
+</p>
+
+<%= link_to 'Edit', edit_oficina_path(@oficina) %> |
+<%= link_to 'Back', oficinas_path %>

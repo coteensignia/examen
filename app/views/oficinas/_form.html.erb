@@ -1,0 +1,27 @@
+<%= form_with(model: oficina) do |form| %>
+  <% if oficina.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(oficina.errors.count, "error") %> prohibited this oficina from being saved:</h2>
+
+      <ul>
+        <% oficina.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :numero %>
+    <%= form.text_field :numero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :edificio_id %>
+    <%= form.text_field :edificio_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
