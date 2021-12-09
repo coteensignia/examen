@@ -2,7 +2,6 @@
   <% if edificio.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(edificio.errors.count, "error") %> prohibited this edificio from being saved:</h2>
-
       <ul>
         <% edificio.errors.each do |error| %>
           <li><%= error.full_message %></li>
