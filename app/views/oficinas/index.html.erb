@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/menu_vertical' %>
 
+<div class="container col-10 mt-5">
+<p id="notice"><%= notice %></p>
+ 
+ <div class="col-12">
 <h1>Oficinas</h1>
 
-<table class="table table-striped table-hover">
+
+<table class="table table-striped table-hover mt-4">
   <thead>
     <tr>
       <th>Número</th>
@@ -18,7 +23,7 @@
         <td><%= oficina.edificio.nombre %></td>
         <td><%= link_to 'Mostrar', oficina, class: 'btn btn-info btn-sm text-white' %></td>
         <td><%= link_to 'Editar', edit_oficina_path(oficina), class: 'btn btn-warning btn-sm text-white' %></td>
-        <td><%= link_to 'Eliminar', oficina, method: :delete, data: { confirm: 'Estas Seguro' }, class: 'btn btn-danger btn-sm text-white' %></td>
+        <td><%= link_to 'Eliminar', oficina, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn btn-danger btn-sm text-white' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +31,6 @@
 
 <br>
 
-<%= link_to 'Crear Nueva Oficina', new_oficina_path, class:'btn btn-primary btn-lg text-white' %>
+
+</div>
+

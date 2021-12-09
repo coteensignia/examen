@@ -18,7 +18,10 @@
 
   <div class="field">
     <%= form.label :edificio_id %>
-    <%= form.text_field :edificio_id %>
+    
+ <%= form.select   :edificio_id,
+  options_from_collection_for_select(@edificios, :id, :nombre),
+  { include_blank: "Selecciona el edificio" }, class: 'form-select' %> 
   </div>
 
   <div class="actions">

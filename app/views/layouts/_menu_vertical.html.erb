@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+   
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column 
+            align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+
+             <%= image_tag("logo.png", size: "180x100") %>
+
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+  
+                    <li class='mt-4'>
+                        <%= link_to edificios_path, class:'btn  btn-sm text-white'  do %>
+                        <i class="bi bi-building"></i>
+                        <span>Edificios</span>
+                        <%end%>
+                    </li>
+                    <li>
+                        <%= link_to new_edificio_path, class:'btn  btn-sm text-white'  do %>
+                        <i class="bi bi-plus-circle-fill"></i>
+                        <span>Crear</span>
+                        <%end%>
+                    </li>
+                            
+                    <li class='mt-4'>
+                        <%= link_to oficinas_path, class:'btn  btn-sm text-white'  do %>
+                        <i class="bi bi-key"></i>
+                        <span>Oficinas</span>
+                         <%end%>
+                    </li>
+
+                    <li class="nav-item">
+                        <%= link_to new_oficina_path, class:'btn  btn-sm text-white'  do %>
+                        <i class="bi bi-plus-circle-fill"></i>
+                        <span>Crear</span>
+                        <%end%>
+                    </li>
+                </ul>
+
+                <div class="dropdown pb-4">
+
+                 <%= link_to "Cerrar Session", destroy_usuario_session_path, :method => :delete, class: 'btn btn-danger btn-sm text-white mt-5' %>
+
+                </div>
+            </div>
+  </div>
+        

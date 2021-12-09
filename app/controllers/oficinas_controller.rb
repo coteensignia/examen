@@ -13,10 +13,13 @@ class OficinasController < ApplicationController
   # GET /oficinas/new
   def new
     @oficina = Oficina.new
+    @edificios = Edificio.all
   end
 
   # GET /oficinas/1/edit
   def edit
+    
+    @edificios = Edificio.all
   end
 
   # POST /oficinas or /oficinas.json
@@ -25,11 +28,11 @@ class OficinasController < ApplicationController
 
     respond_to do |format|
       if @oficina.save
-        format.html { redirect_to @oficina, notice: "Oficina was successfully created." }
-        format.json { render :show, status: :created, location: @oficina }
+        format.html { redirect_to @oficina, notice: "Oficina fue creada con exito" }
+        
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @oficina.errors, status: :unprocessable_entity }
+      
       end
     end
   end
@@ -38,11 +41,12 @@ class OficinasController < ApplicationController
   def update
     respond_to do |format|
       if @oficina.update(oficina_params)
-        format.html { redirect_to @oficina, notice: "Oficina was successfully updated." }
-        format.json { render :show, status: :ok, location: @oficina }
+        format.html { redirect_to @oficina, notice: "Oficina fue actualizada con exito." }
+     
+        
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @oficina.errors, status: :unprocessable_entity }
+         @edificios = Edificio.all
+         format.html { render :edit, status: :unprocessable_entity } 
       end
     end
   end
@@ -51,8 +55,8 @@ class OficinasController < ApplicationController
   def destroy
     @oficina.destroy
     respond_to do |format|
-      format.html { redirect_to oficinas_url, notice: "Oficina was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { redirect_to oficinas_url, notice: "Oficina fue destruida con exito" }
+     
     end
   end
 

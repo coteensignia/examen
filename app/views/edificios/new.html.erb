@@ -1,5 +1,16 @@
-<h1>New Edificio</h1>
-
-<%= render 'form', edificio: @edificio %>
-
-<%= link_to 'Back', edificios_path %>
+<%= render 'layouts/menu_vertical' %>
+ 
+ <div class="container col-10">
+  <div class="col-10 m-5">
+    <div class="card border-primary mb-3"   style="max-width: 500px;">
+      <div class="card-header">
+      <h2> Nuevo Edificio </h2> 
+      </div>
+    <div class="card-body text-primary">
+      <%= render 'form',edificio: @edificio,
+        p_edificio: @edificio
+      %>
+    <%= link_to 'Volver', edificios_path %>
+    </div>
+  </div>
+</div>

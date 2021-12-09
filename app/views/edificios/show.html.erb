@@ -1,19 +1,54 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/menu_vertical' %>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @edificio.nombre %>
-</p>
+<div class="container col-10 mt-5">
+ <p id="notice"><%= notice %></p>
+ <div class="col-10">
+  <div class="card bg-light mb-3  border-info" style="max-width: 800px;">
+  <div class="card-header ">
+  <div class="row">
+  <div class="col">
+    <h2> Edificio  <%= @edificio.nombre %> </h2>
+  </div>
+  
+  <div class="col">
+    <%= link_to 'Editar', edit_edificio_path(@edificio), class:'btn btn-primary btn-sm text-white' %> |
+    <%= link_to 'Volver', edificios_path, class:'btn btn-primary btn-sm text-white' %>
+  </div>
+  </div>
+</div>
 
-<p>
-  <strong>Direccion:</strong>
-  <%= @edificio.direccion %>
-</p>
+  <div class="card-body"> 
+    <div class="row">
+     <div class="col">
+      <h5 class="card-title">Direccion:</h5>
+      <p class="card-text"><%= @edificio.direccion %></p>
+    </div>
+     <div class="col">
+       <h5 class="card-title">Ciudad:</h5>
+      <p class="card-text"><%= @edificio.ciudad %></p>
+      
+    </div>
+    </div>
 
-<p>
-  <strong>Ciudad:</strong>
-  <%= @edificio.ciudad %>
-</p>
+<div class="card-body d-flex justify-content-center">
+      <div class="card mb-3  " style="max-width: 300px"">
 
-<%= link_to 'Edit', edit_edificio_path(@edificio) %> |
-<%= link_to 'Back', edificios_path %>
+      <% if @edificio.foto_portada.attached?%>
+        <%= image_tag @edificio.foto_portada %>
+      <% end %>
+</div>
+      </div>
+
+     <div class="row field text-center mt-3">
+      <h5><strong>Oficinas</strong></h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <% @edificio.oficinas.each do |oficinas| %>
+          <p><%= oficinas.numero%></p>
+          <% end %>
+        </li>
+      </ul>
+    </div> 
+  </div>
+</div>
+</div>

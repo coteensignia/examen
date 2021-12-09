@@ -1,6 +1,17 @@
-<h1>Editing Oficina</h1>
+ <%= render 'layouts/menu_vertical' %>
+ <div class="col-10 mt-5">
 
-<%= render 'form', oficina: @oficina %>
+<div class="card border-warning mb-3" style="max-width: 800px;">
+  <div class="card-header"><h1>Editar Oficina</h1>
+<%= link_to 'Mostrar', @oficina, class:'btn btn-primary btn-sm text-white' %> |
+<%= link_to 'Volver', oficinas_path, class:'btn btn-primary btn-sm text-white' %>
+  </div>
 
-<%= link_to 'Show', @oficina %> |
-<%= link_to 'Back', oficinas_path %>
+  <div class="card-body">
+   
+   
+    <%= render 'form', oficina: @oficina, edificios: @edificios %>
+
+   
+  </div>
+</div>

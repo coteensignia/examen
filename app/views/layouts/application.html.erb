@@ -5,12 +5,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+        <!-- Agregando los íconos de bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
+   </head>
   <body>
-    <%= yield %>
+        <%= yield %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+       
   </body>
 </html>
+ 
+                        
+                            
+                             
+
+
+
+
+
+                
+
+      

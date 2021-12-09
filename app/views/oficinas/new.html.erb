@@ -1,5 +1,17 @@
-<h1>New Oficina</h1>
 
-<%= render 'form', oficina: @oficina %>
+ <%= render 'layouts/menu_vertical' %>
 
-<%= link_to 'Back', oficinas_path %>
+ <div class="container col-10">
+ <div class="col-10 m-5">
+<div class="card border-primary mb-3" style="max-width: 500px;">
+  <div class="card-header">
+ <h1>Nueva Oficina</h1>
+
+<%= render 'form', oficina: @oficina, edificios: @edificios %>
+
+<%= link_to 'Volver', oficinas_path %>
+
+  </div>
+</div>
+
+</div>

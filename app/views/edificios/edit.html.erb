@@ -1,6 +1,12 @@
-<h1>Editing Edificio</h1>
+ <%= render 'layouts/menu_vertical' %>
 
-<%= render 'form', edificio: @edificio %>
-
-<%= link_to 'Show', @edificio %> |
-<%= link_to 'Back', edificios_path %>
+ <div class="col-10 mt-5">
+  <div class="card border-warning mb-3"   style="max-width: 800px;">
+    <div class="card-header"><h1>Editar Edificio</h1>
+    <%= link_to 'Mostrar', @edificio, class:'btn btn-primary btn-sm text-white' %> |
+    <%= link_to 'Volver', edificios_path, class:'btn btn-primary btn-sm text-white' %>
+  </div>
+    <div class="card-body">
+      <%= render 'form', oficina: @oficina, edificios: @edificios %>
+    </div>
+</div>

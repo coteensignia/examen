@@ -1,11 +1,12 @@
-<%= form_with(model: edificio) do |form| %>
-  <% if edificio.errors.any? %>
+<%= form_with(model: @edificio) do |form| %>
+
+  <% if @edificio.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(edificio.errors.count, "error") %> prohibited this edificio from being saved:</h2>
       <ul>
-        <% edificio.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
+          <% edificio.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
       </ul>
     </div>
   <% end %>
@@ -23,6 +24,10 @@
   <div class="field">
     <%= form.label :ciudad %>
     <%= form.text_field :ciudad %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.file_field :foto_portada %> 
   </div>
 
   <div class="actions">
